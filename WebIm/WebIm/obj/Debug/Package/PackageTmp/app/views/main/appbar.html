@@ -1,0 +1,131 @@
+﻿<!--logo-->
+<div class="navbar-header">
+    <button class="pull-right visible-xs" data-ng-toggle-class="show" data-toggle-ani="true" data-auto-hide="true" data-target=".top-right-menu">
+        <i class="glyphicon glyphicon-cog"></i>
+    </button>    
+    <button class="pull-right visible-xs" data-ng-toggle-class="show-sidebar" data-toggle-ani="true" data-auto-hide="true" data-target=".page-container">
+        <i class="glyphicon glyphicon-align-justify"></i>
+    </button>
+
+    <a href="javascript:void(0)" class="navbar-brand ">
+        <img class="hidden-xs" data-ng-src="{{getImageUrl('lmc.png')}}" alt=".">
+        <span class="hidden-folded m-l-xs ng-binding" data-ng-bind="settings.pageTitle"></span>
+    </a>
+</div>
+
+<div class="top-search hidden-xs">
+    <div class="border"></div>
+    <form name="searchForm" data-ng-submit="search(searchForm.$valid)" novalidate>
+        <div class="form-group" data-focus-class="is-focused" data-ng-class="{ 'has-error' : searchForm.keyword.$invalid && searchForm.keyword.$dirty }">
+            <div class="input-group">
+                <span class="input-group-addon  fa fa-search"></span>
+                <input name="keyword" 
+                    data-ng-model="searchModel.keyword" required 
+                    type="search" 
+                    class="form-control" 
+                    placeholder="请输入查找内容或关键字">
+                <span data-ng-messages="searchForm.keyword.$error" data-ng-show="searchForm.keyword.$invalid && searchForm.keyword.$dirty" class="help-block">
+                    <span data-ng-message="required">请输入查找内容或关键字</span>
+                </span>
+            </div>
+        </div>
+        <div class="btn-group search-category" uib-dropdown>
+            <button id="split-button" type="button" data-ng-click="search(searchForm.$valid)" class="btn" data-ng-bind="searchModel.currentCategory.name"></button>
+            <button type="button" class="btn" uib-dropdown-toggle>
+                <span class="caret"></span>
+                <span class="sr-only"></span>
+            </button>
+            <ul uib-dropdown-menu  role="menu" aria-labelledby="split-button">
+                <li data-ng-click="searchModel.currentCategory=c" data-ng-repeat="c in searchModel.categoryList track by $index" role="menuitem"><a href="javascript:void(0)" data-ng-bind="c.name"></a></li>               
+            </ul>
+       </div>
+    </form>
+</div>
+
+<div class="collapse navbar-collapse top-right-menu">
+    <!-- nabar right -->
+    <ul class="nav navbar-nav navbar-right">
+        <li class="noaction visible-xs searchbar">
+            <form name="searchBarForm" data-ng-submit="search(searchBarForm.$valid,'.top-right-menu')" novalidate>
+                <div class="form-group" data-focus-class="is-focused" data-ng-class="{ 'has-error' : searchBarForm.keyword.$invalid && searchBarForm.keyword.$dirty }">
+                    <div class="input-group">
+                        <span class="input-group-addon  fa fa-search"></span>
+                        <input name="keyword" 
+                            data-ng-model="searchModel.keyword" required 
+                            type="search" 
+                            class="form-control" 
+                            placeholder="请输入查找内容或关键字">
+                        <span data-ng-messages="searchBarForm.keyword.$error" data-ng-show="searchBarForm.keyword.$invalid && searchBarForm.keyword.$dirty" class="help-block">
+                            <span data-ng-message="required">请输入查找内容或关键字</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="btn-group search-category" uib-dropdown>
+                    <button id="split-button" type="button" data-ng-click="search(searchBarForm.$valid,'.top-right-menu')" class="btn" data-ng-bind="searchModel.currentCategory.name"></button>
+                    <button type="button" class="btn" uib-dropdown-toggle>
+                        <span class="caret"></span>
+                        <span class="sr-only"></span>
+                    </button>
+                    <ul uib-dropdown-menu  role="menu" aria-labelledby="split-button">
+                        <li data-ng-click="searchModel.currentCategory=c" data-ng-repeat="c in searchModel.categoryList track by $index" role="menuitem"><a href="javascript:void(0)" data-ng-bind="c.name"></a></li>               
+                    </ul>
+                </div>
+            </form>
+        </li>
+        <li>
+            <a data-ng-ripples href="javascript:void(0)">
+                <i class="fa fa-user fa-lg"></i>
+                <span data-ng-bind="userInfo.UserName"></span>
+            </a>
+        </li>
+        <li class="split hidden-xs">
+            <a>|</a>
+        </li>
+        <li>
+            <a data-ng-ripples href="javascript:void(0)" data-ng-click="logout()">
+                <i class="fa fa-sign-out fa-lg"></i>
+                <span class="visible-xs-inline">退出</span>
+            </a>
+        </li>
+        <li>
+            <a href="#notes" data-ng-mouseover="showNoticePanel()" data-ng-mouseout="hidNoticePanel()">
+                <i class="fa fa-comments fa-lg"></i>
+                <span class="visible-xs-inline">消息</span>
+                <span class="badge badge-sm up bg-red pull-right-xs">{{noticeProperty.newCount}}</span>
+            </a>
+            <div id="noticePanel" class="dropdown-menu" data-ng-class="{'show':noticeProperty.isShowNoticePanel}" style="padding: 0;" data-ng-mouseover="showNoticePanel()" data-ng-mouseout="hidNoticePanel()">
+                <div class="panel bg-white notice-panel">
+                    <div class="panel-heading b-light bg-light">
+                        <strong>您有<span>{{noticeProperty.newCount}}</span>条新消息</strong>
+                    </div>
+                    <!--<div ng-scrollbar scrollbar-x="false" scrollbar-y="true" style="height: 150px;overflow: hidden;width: 235px;" scrollbar-config="{show:false, autoResize: true, dragSpeed: 1.2}">-->
+                    <div style="width: 235px;">
+                        <div class="list-group" style="margin-bottom: 0;">
+                            <a href="javascript:void(0);" class="list-group-item" ng-repeat="item in noticeProperty.list track by $index">
+                                <span class="clear block m-b-none" data-ng-bind-html="item.contentHtml"></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="panel-footer text-sm">
+                        <a href="#notes" data-toggle="class:show animated fadeInRight">查看所有</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <!--<li>
+            <a data-ng-ripples href="javascript:void(0)">
+                <i class="fa fa-comments fa-lg"></i>
+                <span class="visible-xs-inline">消息</span>
+                <span class="badge badge-sm up bg-red pull-right-xs">2</span>
+            </a>
+        </li>-->
+        <li>
+            <a data-ng-ripples href="javascript:void(0)">
+                <i class="fa fa-cog fa-lg"></i>
+                <span class="visible-xs-inline">设置</span>
+            </a>
+        </li>
+        
+    </ul>
+
+</div>

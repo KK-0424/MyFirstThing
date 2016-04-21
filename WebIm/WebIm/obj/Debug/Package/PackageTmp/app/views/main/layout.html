@@ -1,0 +1,20 @@
+﻿<div class="full main">
+    <div class="appbar"  data-ng-include="getViewUrl('appbar.html')">
+    </div>
+    
+    <div class="wndToolbar hidden-xs" data-ng-show="navModel.currentItem && navModel.currentItem.showWndToolbar" >
+        <button type="button" data-ng-click="minCurrentPage()" class="btn btn-raised btn-sm">
+            <i class="fa fa-minus"></i>
+        </button>
+        <button type="button" data-ng-click="closeCurrentPage()" class="btn btn-raised btn-sm">
+            <i class="fa fa-close"></i>
+        </button>
+    </div>
+    <div class="page-container" >
+        <div class="full" data-ng-class="{'bg-page': p.navItem && p.navItem.showActivebar,'page-cur': isActiveView('{{p.view}}')}" data-ng-show="isActiveView('{{p.view}}')" data-ng-repeat="p in cachePages track by p.pageId"  data-ui-view="{{p.viewName}}"></div>                   
+    </div>
+    
+    <div data-ng-show="navModel.currentItem && navModel.currentItem.showActivebar" class="activebar hidden-xs"></div>
+    <div class="footbar" data-ng-include="getViewUrl('footbar.html')"></div>
+</div>
+

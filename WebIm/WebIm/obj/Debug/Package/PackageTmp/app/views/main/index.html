@@ -1,0 +1,79 @@
+﻿<div class="full index">
+    <div class="panel task">
+        <div class="panel-heading">
+            <div class="pull-left title">
+                <span class="fa fa-calendar-check-o"></span>
+                <span>我的任务</span>
+            </div>
+            <div class="pull-right">
+                <div data-ng-ripples class="addTask">
+                    <span class="fa fa-plus-square-o"></span>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <button data-ng-ripples data-ng-disabled="!taskList.canPrev" class="btn taskboxBtn prev hidden-xs"></button>
+            <div class="listBox">
+                <ul>
+                    <li data-ng-repeat="ti in taskList.list | limitTo:5" data-ng-click="taskListClick(ti)" data-ng-class="{'active': ti.isSelected}">
+                        <div class="item-panel">
+                            <div class="head s-{{ti.status}}" >
+                                <div class="seq " data-ng-bind="ti.seq | padLeft:{len:2,char:'0'}">
+                                </div>
+                                <div class="s-t">
+                                    <span class="fa s-icon"></span>
+                                    <span>待审核</span>
+                                 </div>
+                            </div>
+                            <div class="body">
+                                <div class="wrapper" style="overflow:hidden;">
+                                    <div class="line">
+                                        <span class="line-label hidden-xs">标题：</span>
+                                        <span class="line-content task-title" data-ng-bind="ti.title"></span>
+                                    </div>
+                                    <div class="line">
+                                        <span class="line-label  hidden-xs">摘要：</span>
+                                        <span class="line-content task-subject" data-ng-bind="ti.content"></span>
+                                    </div>
+                                    <div class="imgLine" data-ng-if="ti.EtClipfile && ti.EtClipfile.length>0">                                       <div class="wrapper">
+                                            
+                                            <div class="task-image-item"  data-ng-auto-size="height" data-ng-repeat="img in ti.EtClipfile | limitTo:3" >
+                                                <img data-ng-src="{{img.filepath}}" data-ng-auto-zoom/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <button data-ng-ripples data-ng-disabled="!taskList.canNext" class="btn taskboxBtn next  hidden-xs"></button>
+        </div>
+    </div>
+    <div class="panel recommend">
+        <div class="panel-heading">
+            <div class="pull-left title">
+                <span class="fa fa-heart"></span>
+                <span>可能感兴趣的内容</span>
+            </div>
+            <div class="pull-right">
+                <a class="switch">不喜欢，换一批？</a>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="listBox">
+                <ul>
+                     <li data-ng-repeat="ti in recommentsList.list" >
+                        <div class="panel item-panel">
+                            <div class="icon-file" data-ng-auto-zoom-background="{{ti.iconFile}}" data-ng-zoom-class="{normal: 'bg-normal',wide: 'bg-wide'}" ></div>
+                           <div class="caption" data-ng-bind="ti.title"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+</div>
+

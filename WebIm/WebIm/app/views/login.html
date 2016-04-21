@@ -1,0 +1,16 @@
+﻿<div class="loginForm">
+    <div class="bg" style="width:100%;height:100%; z-index:0;position:absolute;"></div>
+    <span class="loginTitle icon-cloud">&nbsp;&nbsp;Login</span>
+    <div class="loginUserName">
+        <span class="loginIcon glyphicon glyphicon-user" >
+        <input class="userName" placeholder="Please input your username" data-ng-model="loginModel.userName" />
+  </span>
+              </div>
+    <div class="loginPassword">
+        <span class="loginIcon glyphicon glyphicon-lock" >
+        <input class="userName" type="password" data-ng-model="loginModel.password" />
+    </span>
+            </div>
+    <button class="loginBtn" data-ng-click="login()">Sign In</button>
+    <a class="loginA" href="/#/reg">还没有账号？注册一个</a>
+</div>

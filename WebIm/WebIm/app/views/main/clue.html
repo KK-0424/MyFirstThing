@@ -1,0 +1,135 @@
+<div class="full page cluepage">
+    <div class="left-sidebar">
+        <ul>
+            <li class="sidebar-title">
+                内容汇聚管理
+            </li>
+            <!--<li class="sidebar-title-clue">
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-ng-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        今天<span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li><a href="#">今天</a></li>
+                        <li><a href="#">本月</a></li>
+                        <li><a href="#">本年</a></li>
+                    </ul>
+                </div>
+            </li>-->
+            <li data-ng-click="getList(item)" data-ng-class="{'active': currentItem == item}" class="s-{{item.value}}" data-ng-repeat="item in sidebarList track by $index">
+                <a href="javascript:void(0)">
+                    <span class="glyphicon s-icon seq"></span>
+                    <span class="item-text" data-ng-bind="item.name"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="page-content" style="left: 20rem;right: 0;">
+        <div class="full wrapper">
+            <div class="page-toolbar" style="padding: 0 1rem;">
+                <div class="full wrapper">
+                    <span class="page-title">线索</span>
+                    <div class="toolbar pull-right">
+                        <div class="btn-toolbar">
+                            <div class="btn-group">
+                                <a data-ng-repeat="btn in toolbar" data-ng-click="$parent.toolbarClick(btn)" href="javascript:void(0)" class="btn" data-ng-class="{'disabled': btn.disabled}" data-uib-popover="{{btn.title}}" data-popover-trigger="mouseenter" data-popover-placement="bottom"><span class="{{btn.icon}}" ></span></a>
+
+<!--                                <a href="javascript:void(0)" class="btn" data-uib-popover="启动云编辑工具" data-popover-trigger="mouseenter" data-popover-placement="bottom"><span class="glyphicon glyphicon-pencil" ></span></a>
+                                <a href="javascript:void(0)" class="btn" data-uib-popover="发布到CMS" data-popover-trigger="mouseenter" data-popover-placement="bottom"><span class="fa fa-share" ></span></a>
+                                <a href="javascript:void(0)" class="btn" data-uib-popover="删除选中对象"  data-popover-trigger="mouseenter" data-popover-placement="bottom"><span class="glyphicon glyphicon-trash" ></span></a>
+                                <a href="javascript:void(0)" class="btn" data-uib-popover="将对象发回到台内"  data-popover-trigger="mouseenter" data-popover-placement="bottom"><span class="glyphicon glyphicon-flash" ></span></a>
+                                <a href="javascript:void(0)" class="btn" data-uib-popover="提交审核"><span class="glyphicon glyphicon-ok"   data-popover-trigger="mouseenter" data-popover-placement="bottom"></span></a>
+                                <a href="javascript:void(0)" class="btn" data-uib-popover="收藏"><span class="glyphicon glyphicon-star"   data-popover-trigger="mouseenter" data-popover-placement="bottom"></span></a>
+                                <a href="javascript:void(0)" class="btn" data-uib-popover="启动云文稿编辑工具"  data-popover-trigger="mouseenter" data-popover-placement="bottom"><span class="glyphicon glyphicon-file" ></span></a>-->
+                            </div>
+                            <div class="btn-group">
+                                <a href="javascript:void(0)" class="btn"><span class="glyphicon glyphicon-th-large" ></span></a>
+                                <a href="javascript:void(0)" class="btn active"><span class="glyphicon glyphicon-list" ></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-list">
+                <div class="full wrapper">
+                    <section class="fixed-table">
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr class="header">
+                                        <th>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox">
+                                                    <span class="checkbox-material">
+                                                        <span class="check"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div></div>
+                                        </th>
+                                        <th>
+                                            <div>名称</div>
+                                        </th>
+                                        <th>
+                                            <div>时间</div>
+                                        </th>
+                                        <th>
+                                            <div>摘要</div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr data-ng-repeat="item in ListModel.list">
+                                        <td>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" data-ng-model="item.isSelected" data-ng-change="$parent.selectChanged(item)">
+                                                    <span class="checkbox-material">
+                                                        <span class="check"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="td-img">
+                                                <img data-ng-if="item.icon.indexOf('glyphicon') == -1" data-ng-src="{{item.icon}}" />
+                                                <span data-ng-if="item.icon.indexOf('glyphicon') != -1" class="{{item.icon}}"></span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span data-ng-if="currentItem.value != '4'" class="td-title">{{item.title}}</span>
+                                            <a data-ng-if="currentItem.value == '4'" href="{{item.link}}" target="_blank"><span class="td-title">{{item.title}}</span></a>
+                                        </td>
+                                        <td>
+                                            <span class="date">{{item.createtime}}</span>
+                                        </td>
+                                        <td>
+                                            <span style="max-width: 600px;">{{item.summary}}</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                    <!--<ul data-ng-if="page.totalPageCount>0" class="pager">
+                      <li class="previous" data-ng-class="{'disabled':page.currentPageNo<=1}" data-ng-click="changPageNo(page.currentPageNo-1)"><a href="javascript:void(0)">&larr; 上一页</a></li>
+                      <li>第{{page.currentPageNo}}页/共{{page.totalPageCount}}页</li>
+                      <li class="next" data-ng-class="{'disabled':page.currentPageNo>=page.totalPageCount}" data-ng-click="changPageNo(page.currentPageNo+1)"><a href="javascript:void(0)">下一页 &rarr;</a></li>
+                    </ul>-->
+
+                </div>
+            </div>
+            <div class="page-footbar">
+                <div class="full wrapper" style="text-align: center;">
+                    <input type="file"  id="uploadFileInput" onchange="angular.element(this).scope().uploadFile('#uploadFileInput');" style="display: none;"/>
+                    <button type="button" class="btn btn-default multi-first" data-ng-click="selectionFile('#uploadFileInput')">上 传</button>
+                    <button type="button" class="btn btn-default multi-last" data-ng-click="openDocEditor()">新建文稿</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

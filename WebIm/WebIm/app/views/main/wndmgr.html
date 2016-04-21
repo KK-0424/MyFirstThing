@@ -1,0 +1,23 @@
+<div class="wndmgr full">
+    <div class="row full">
+        <div class="wndItem {{getClass(cachePages)}}" data-ng-click="switchPage(p.pageId)" data-ng-repeat="p in cachePages | filter:{showInWindow:true}  track by p.pageId">
+            <div class="thumbnail" >
+                <img data-ng-src="{{p.image}}" data-ng-auto-zoom>
+            
+            </div>
+            <div class="caption">
+             {{p.title}}
+            </div>
+        </div>
+        
+    </div>
+  <!--<div data-ng-click="switchPage(p.pageId)" data-ng-repeat="p in cachePages | filter:{showInWindow:true}  track by p.pageId" class="col-sm-6 col-md-4">
+    <div class="thumbnail" data-ng-auto-size="height">
+      <img data-ng-src="{{p.image}}" data-ng-auto-zoom>
+      
+    </div>
+    <div class="caption">
+        <h3>{{p.title}}</h3>
+     </div>
+  </div>-->
+</div>

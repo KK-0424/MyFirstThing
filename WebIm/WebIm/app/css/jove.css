@@ -1,0 +1,385 @@
+.otherInfo
+{
+	position: absolute;
+	height: 100%;
+	background-color: #eee;
+	width: 199px;
+	box-shadow: 1px 1px 1px #ccc;
+}
+.iframe
+{    position: absolute;
+    left: 700px;
+    top: 0;
+    right: 0;
+    /* width: 100%; */
+    bottom: 0;
+}
+body
+{
+	overflow: hidden;
+}
+
+.sysMsg
+{
+	height: 20%;
+}
+
+.title
+{
+	background-color: #2ba1d2;
+	line-height: 28px;
+	width: 100%;
+	color: #fff;
+	padding-left: 10px;
+}
+
+.list
+{
+	margin-left: 10px;
+}
+
+.userList
+{
+	height: 80%;
+}
+
+.chatbox
+{
+	width: 500px;
+	opacity: .95;
+	position: absolute;
+	height: 100%;
+	left: 200px;
+	box-shadow: 1px 1px 1px 1px #ccc;
+}
+
+	.chatbox .chatContent
+	{
+		background: #e1f0e8;
+		width: 100%;
+		top: 0px;
+		bottom: 100px;
+		position: absolute;
+		font-size: 12px;
+	}
+
+.chatTitle
+{
+	line-height: 28px;
+	color: #fff;
+	background-color: #2ba1d2;
+}
+
+.input-box
+{
+	position: absolute;
+	bottom: 0;
+	height: 100px;
+	width: 100%;
+	background-color: #fff;
+}
+
+.button
+{
+	float: right;
+	width: 100px;
+	height: 25px;
+	position: relative;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%,from(#2ba1d2), to(#1a90c1));
+	border: none;
+	border-radius: 3px;
+	font-weight: 700;
+	color: #fff;
+	font-size: 16px;
+}
+.button:hover
+{
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%,from(#51c3f8), to(#40b2e7));
+}
+.msgArea
+{
+	height: 65px;
+	position: relative;
+	width: 100%;
+	border: 1px solid #ccc;
+	padding: 1px;
+}
+
+	.msgArea:focus
+	{
+		padding: 0px;
+		border: 2px solid #8caee5;
+	}
+
+.tips
+{
+	font-size: 10px;
+	position: relative;
+}
+
+.sendBlock
+{
+	width: 100%;
+	position: relative;
+}
+
+.chatBlock
+{
+	overflow: hidden;
+	position: relative;
+	height: 100%;
+	display: flex;
+}
+
+section, div.robot
+{
+	padding: 10px;
+	clear: both;
+}
+
+	div.robot, section.robot, section.service, section.top-message
+	{
+		float: left;
+	}
+
+		div.robot > div,
+		section.robot > div,
+		section.service > div,
+		section.top-message > div
+		{
+			max-width: 225px;
+			display: inline-block;
+			position: relative;
+			padding: 5px;
+			color: #111;
+			margin: 0 20px 0 10px;
+			border-radius: 10px;
+			background-color: #fff;
+			box-shadow: inset 0 0 1px #fff;
+			vertical-align: top;
+		}
+
+		section.robot > div
+		{
+			word-break: break-word;
+		}
+			/*
+div.robot>div,
+section.robot>div{
+    margin: 0 11px 0 45px;
+} */
+			div.robot > div:before,
+			section.robot > div:before,
+			section.service > div:before,
+			section.top-message > div:before,
+			.system .windowContent:before
+			{
+				content: "";
+				position: absolute;
+				left: -5px;
+				top: 4px;
+				width: 0;
+				height: 0;
+				border-top: solid transparent;
+				border-right: 7px solid #fff;
+				border-bottom: 4px solid transparent;
+			}
+	/*
+div.robot>div:after,
+section.robot>div:after,
+section.service>div:after,
+section.top-message>div:after,
+.system .windowContent:after {
+  border-color:rgba(227, 236, 255, 0);
+  border-right-color:#c5e4fa;
+  border-width:8px;
+  top:15px;
+  margin-top:-8px;
+}
+
+div.robot>div:before,
+section.robot>div:before,
+section.service>div:before,
+section.top-message>div:before,
+.system .windowContent:before {
+  border-color:rgba(165, 181, 213, 0);
+  border-right-color:#fff;
+  border-width:9px;
+  top:15px;
+  margin-top:-9px;
+}
+  */
+	section.user
+	{
+		float: right;
+		text-align: right;
+	}
+
+		section.user > div
+		{
+			max-width: 225px;
+			position: relative;
+			display: inline-block;
+			padding: 5px;
+			margin: 0 10px 0 12px;
+			text-align: left;
+			border-radius: 10px;
+			color: #fff;
+			box-shadow: inset 0 0 1px #007aff;
+			background-color: #007aff;
+			vertical-align: top;
+			word-break: break-all;
+		}
+			/*
+section.user>div:after,
+section.user>div:before {
+  left:100%;
+  border:solid transparent;
+  content:" ";
+  height:0;
+  width:0;
+  position:absolute;
+  pointer-events:none;
+}
+
+section.user>div:after {
+  border-color:rgba(255, 255, 255, 0);
+  border-left-color:#e3e3e3;
+  border-width:8px;
+  top:15px;
+  margin-top:-8px;
+}
+  */
+			section.user > div:before
+			{
+				content: "";
+				position: absolute;
+				right: -5px;
+				top: 4px;
+				width: 0;
+				height: 0;
+				border-top: solid transparent;
+				border-left: 7px solid #007aff;
+				border-bottom: 4px solid transparent;
+			}
+
+
+.user > span
+{
+	font-weight: normal;
+	font-size: 14px;
+	color: #f60;
+	max-width: 60px;
+	height: 36px;
+	overflow: hidden;
+	float: right;
+}
+
+
+.service > span
+{
+	max-width: 60px;
+	height: 36px;
+	/*
+    background: url("https://i.alipayobjects.com/i/ecmng/png/201404/2O35FCjByn.png");
+	color: transparent;
+	background-size: 100%;
+	*/
+	font-weight: normal;
+	font-size: 14px;
+	color: #999;
+	overflow: hidden;
+	float: left;
+}
+
+.service > time
+{
+	display: none;
+}
+
+
+
+
+
+section.robot > .robot-comment
+{
+	padding: 0;
+}
+
+section.service-comment > div
+{
+	padding: 0;
+	padding-top: 10px;
+}
+
+
+section article header
+{
+	margin-top: 10px;
+}
+
+section article li
+{
+	width: 202px;
+	padding: 10px 0;
+	list-style: none;
+	border-top: solid 1px #afafaf;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	color: #2982e5;
+}
+
+	section article li:last-child
+	{
+		padding-bottom: 0;
+	}
+
+section, section a
+{
+	font-size: 13px;
+}
+
+.arrow-down, .arrow-up
+{
+	width: 10px;
+	height: 6px;
+	background: url("https://i.alipayobjects.com/i/ecmng/png/201404/2O4b2MEDzR.png") no-repeat;
+	background-size: 100%;
+	padding: 5px 0;
+	margin: 5px auto 0;
+}
+
+.arrow-up
+{
+	background: url("https://i.alipayobjects.com/i/ecmng/png/201404/2O4b2MEDzR.png") no-repeat 0 -16px;
+	background-size: 100%;
+}
+
+section .msg-system
+{
+	color: #999;
+	font-size: 13px;
+}
+
+	section .msg-system a
+	{
+		font-size: 13px;
+	}
+
+		section .msg-system a.isClicked
+		{
+			color: #999;
+		}
+
+section.evaluateSec .answer
+{
+	padding: 8px 12px 4px 12px;
+}
+
+.listview
+{
+	display: block;
+	width: 100%;
+	height: 100%;
+}

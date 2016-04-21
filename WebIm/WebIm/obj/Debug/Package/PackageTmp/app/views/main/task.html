@@ -1,0 +1,118 @@
+<div class="full page taskpage">
+    <div class="left-sidebar">
+        <ul>
+            <li class="sidebar-title">
+                任务中心
+            </li>
+            <li data-ng-click="getTaskList(item)" data-ng-class="{'active': currentItem == item}" class="s-{{item.value}}" data-ng-repeat="item in sidebarList track by $index">
+                <a href="javascript:void(0)">
+                    <span class="fa s-icon seq">
+                    </span>
+                    <span class="item-text" data-ng-bind="item.name"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="page-content" style="left: 20rem;right: 0;">
+        <div class="full wrapper">
+            <div class="page-toolbar" style="padding: 0 1rem;">
+                <div class="full wrapper">
+                    <span class="page-title">任务</span>
+                    <div class="toolbar pull-right">
+                        <div class="btn-toolbar">
+                            <div class="btn-group">
+                                <a href="javascript:void(0)" class="btn" title="通过"><span class="glyphicon glyphicon-ok" ></span></a>
+                                <a href="javascript:void(0)" class="btn" title="退回"><span class="glyphicon glyphicon-remove" ></span></a>
+                            </div>
+                            <div class="btn-group">
+                                <a href="javascript:void(0)" class="btn" title="修改"><span class="glyphicon glyphicon-pencil" ></span></a>
+                                <a href="javascript:void(0)" class="btn" title="送审"><span class="glyphicon glyphicon-arrow-right" ></span></a>
+                                <a href="javascript:void(0)" class="btn" title="删除"><span class="glyphicon glyphicon-trash" ></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-list">
+                <div class="full wrapper">
+                    <section class="fixed-table">
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr class="header">
+                                        <th>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" data-ng-chcked="task.isSelected">
+                                                    <span class="checkbox-material">
+                                                        <span class="check"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div></div>
+                                        </th>
+                                        <th>
+                                            <div>名称</div>
+                                        </th>
+                                        <th>
+                                            <div>时间</div>
+                                        </th>
+                                        <th>
+                                            <div>摘要</div>
+                                        </th>
+                                        <th>
+                                            <div>审核状态</div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr data-ng-repeat="task in taskListModel.list">
+                                        <td>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox">
+                                                    <span class="checkbox-material">
+                                                        <span class="check"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="td-img"><span class="glyphicon glyphicon-list-alt"></span></div>
+                                        </td>
+                                        <td>
+                                            <span class="td-title">{{task.taskname}}</span>
+                                        </td>
+                                        <td>
+                                            <span class="date">{{task.createtime}}</span>
+                                        </td>
+                                        <td>
+                                            <span>{{task.content}}</span>
+
+                                        </td>
+                                        <td class="s-{{task.status}}">
+                                            <span class="td-icon seq fa s-icon"></span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                    <!--<ul class="pager">
+                      <li class="previous" data-ng-class="{'disabled':page.currentPageNo<=1}" data-ng-click="changPageNo(page.currentPageNo-2)"><a href="javascript:void(0)">&larr; 上一页</a></li>
+                      <li>第{{page.currentPageNo}}页</li>
+                      <li class="next" data-ng-click="changPageNo(page.currentPageNo)"><a href="javascript:void(0)">下一页 &rarr;</a></li>
+                    </ul>-->
+                </div>
+            </div>
+            <div class="page-footbar">
+                <div class="full wrapper" style="text-align: center;">
+                    <button type="button" class="btn btn-default">新建任务</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

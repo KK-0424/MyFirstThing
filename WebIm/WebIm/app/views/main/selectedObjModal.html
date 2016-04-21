@@ -1,0 +1,19 @@
+<!-- 模态框（Modal） -->
+<div class="modal-content selectedobj-modal">
+    <div class="modal-header">
+    <button type="button" class="close" data-ng-dismiss="modal" aria-hidden="true" data-ng-click="selectedObjCancel()">&times;</button>
+    <h3 class="modal-title" id="myModalLabel"></h3>
+    </div>
+    <div class="modal-body">
+        <div class="listview list-type-icons" style="max-height: 700px;overflow: auto;">
+            <div class="list" data-ng-click="changeSelected(item)" data-ng-class="{'active':selectedObjItem == item}" data-ng-repeat="item in list track by $index">
+                <img class="list-img" data-ng-if="item.icon.indexOf('glyphicon') == -1" data-ng-src="{{item.icon}}" />
+                <span data-ng-if="item.icon.indexOf('glyphicon') != -1" class="list-icon {{item.icon}}"></span>
+                <span class="list-title">{{item.title}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-ng-click="selectedObjOk()">确定</button>
+    </div>
+</div>

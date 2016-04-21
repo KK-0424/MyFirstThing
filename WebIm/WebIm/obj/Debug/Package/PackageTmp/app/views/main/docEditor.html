@@ -1,0 +1,29 @@
+<div class="full page docEditorPage">
+    <div class="page-content">
+        <div class="row"></div>
+        <div class="row"><div class="col-name">标题</div><div class="col-input"><input type="text" data-ng-model="inputModel.DOCTITLE"></div></div>
+        <div class="row" style="height: 35%;"><div class="col-name">内容</div><div class="col-input"><textarea name="comment" data-ng-model="inputModel.CONTENT"></textarea> </div></div>
+        <div class="row">
+            <div class="col-name"></div>
+            <div class="col-input">
+                <div class="list" data-ng-repeat="item in inputModel.ClipList track by $index">
+                    <img class="list-img" data-ng-if="item.icon.indexOf('glyphicon') == -1" data-ng-src="{{item.icon}}" />
+                    <span data-ng-if="item.icon.indexOf('glyphicon') != -1" class="list-icon {{item.icon}}"></span>
+                    <span class="list-title">{{item.ObjectName}}</span>
+                </div>
+                <div class="addAttachment" data-ng-click="openSelectedObject()"><span class="glyphicon glyphicon-plus-sign"></span></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-name">作者</div>
+            <div class="col-input-cell2"><input type="text" data-ng-model="inputModel.AUTHOR"></div>
+            <div class="col-name">来源</div>
+            <div class="col-input-cell2"><input type="text" data-ng-model="inputModel.SOURCE"></div>
+        </div>
+        <div class="row"><div class="col-name">标签</div><div class="col-input"><input type="text" data-ng-model="inputModel.KEYWORD"></div></div>
+        <div class="page-footbar">
+            <button type="button" class="btn btn-default" data-ng-click="saveDoc()">保存</button>
+            <button type="button" class="btn btn-default" data-ng-click="closeCurrentPage()">取消</button>
+        </div>
+    </div>
+</div>

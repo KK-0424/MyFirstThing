@@ -1,0 +1,116 @@
+﻿<div class="formPanel reg">
+    <div class="formWrapper" ng-scrollbar scrollbar-x="false" scrollbar-y="true" scrollbar-config="{show:true, autoResize: true, dragSpeed: 1.2}">
+
+        <div class="formContent ">
+            <div class="title">
+                <img class="logo" data-ng-src="{{getImageUrl('lmc.png')}}" />
+                <span data-ng-bind="settings.loginTitle"></span>
+            </div>
+            <form name="regForm" data-ng-submit="login(regForm.$valid)" novalidate>
+                <div class="panel">
+
+                    <div class="form-group" data-focus-class="is-focused" data-ng-class="{ 'has-error' : regForm.userName.$invalid && regForm.userName.$dirty }">
+                        <div class="input-group firstInput">
+                            <span class="input-group-addon  icon icon-user"></span>
+                            <input name="userName" data-ng-model="regModel.userName" required 
+                                type="text" class="form-control"                       
+                                placeholder="请使用邮箱或手机号注册(必填)" 
+                                data-uib-popover="请输入您的邮箱或手机号，登录时使用此项登录" 
+                                data-popover-trigger="mouseenter">
+                            <span data-ng-messages="regForm.userName.$error" data-ng-show="regForm.userName.$invalid && regForm.userName.$dirty" class="help-block">
+                                <span data-ng-message="required">用户名不能为空</span>
+                            </span>
+                            
+                        </div>
+                    </div>
+                    <div class="form-group" data-focus-class="is-focused" data-ng-class="{ 'has-error' : regForm.password.$invalid && regForm.password.$dirty }">
+                        <div class="input-group">
+                            <span class="input-group-addon  icon icon-lock"></span>
+                            <input name="password" 
+                                data-ng-model="regModel.password" required 
+                                type="password" 
+                                class="form-control" 
+                                placeholder="请输入密码(必填)" 
+                                data-uib-popover="请输入您需要设置的密码，两次密码必须保持一致" 
+                                data-popover-trigger="mouseenter">
+                            <span data-ng-messages="regForm.password.$error" data-ng-show="regForm.password.$invalid && regForm.password.$dirty" class="help-block">
+                                <span data-ng-message="required">密码不能为空</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group" data-focus-class="is-focused" data-ng-class="{ 'has-error' : regForm.confirmPassword.$invalid && regForm.confirmPassword.$dirty }">
+                        <div class="input-group">
+                            <span class="input-group-addon  icon icon-lock"></span>
+                            <input name="confirmPassword" 
+                                data-ng-model="regModel.confirmPassword" required 
+                                type="password" 
+                                class="form-control" 
+                                placeholder="请重复输入密码(必填)" 
+                                data-uib-popover="请输入您需要设置的密码，两次密码必须保持一致" 
+                                data-popover-trigger="mouseenter">
+                            <span data-ng-messages="regForm.confirmPassword.$error" data-ng-show="regForm.confirmPassword.$invalid && regForm.confirmPassword.$dirty" class="help-block">
+                                <span data-ng-message="required">密码不能为空</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group" data-focus-class="is-focused" data-ng-class="{ 'has-error' : regForm.nickName.$invalid && regForm.nickName.$dirty }">
+                        <div class="input-group">
+                            <span class="input-group-addon  icon icon-tag"></span>
+                            <input name="nickName" 
+                                data-ng-model="regModel.nickName" required 
+                                type="text" 
+                                class="form-control" 
+                                placeholder="请输入真实姓名(必填)" 
+                                data-uib-popover="请输入您的真实姓名" 
+                                data-popover-trigger="mouseenter">
+                            <span data-ng-messages="regForm.nickName.$error" data-ng-show="regForm.nickName.$invalid && regForm.nickName.$dirty" class="help-block">
+                                <span data-ng-message="required">姓名不能为空</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group" data-focus-class="is-focused" data-ng-class="{ 'has-error' : regForm.station.$invalid && regForm.station.$dirty }">
+                        <div class="input-group">
+                            <span class="input-group-addon  icon icon-key"></span>
+                            <input name="station" 
+                                data-ng-model="regModel.station" 
+                                type="text" 
+                                class="form-control" 
+                                placeholder="请输入电视台验证码(选填)" 
+                                data-uib-popover="请输入电视台验证码（选填），申请成为认证用户时，需要此验证码，您可联系电视台管理员获取" 
+                                data-popover-trigger="mouseenter">
+                            <span data-ng-messages="regForm.station.$error" data-ng-show="regForm.station.$invalid && regForm.station.$dirty" class="help-block">
+                                <span data-ng-message="required"></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group lastInput" data-focus-class="is-focused" data-ng-class="{ 'has-error' : regForm.column.$invalid && regForm.column.$dirty }">
+                        <div class="input-group">
+                            <span class="input-group-addon  icon icon-film"></span>
+                            <input name="column" 
+                                data-ng-model="regModel.column" 
+                                type="text" 
+                                class="form-control" 
+                                placeholder="请输入栏目(选填)" 
+                                data-uib-popover="请输入栏目名称（选填）" 
+                                data-popover-trigger="mouseenter">
+                            <span data-ng-messages="regForm.column.$error" data-ng-show="regForm.column.$invalid && regForm.column.$dirty" class="help-block">
+                                <span data-ng-message="required"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="form-group">
+
+                        <a class="btn btn-raised btn-success" data-ng-ripples data-ng-click="reg(regForm.$valid)" data-ng-disabled="regForm.$invalid">注册
+                        
+                        </a>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</div>

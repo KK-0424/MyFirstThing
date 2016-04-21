@@ -1,0 +1,97 @@
+﻿<!--logo-->
+<div class="navbar-header">
+    <button class="pull-right visible-xs" data-ng-toggle-class="show" data-toggle-ani="true" data-auto-hide="true" data-target=".bottom-left-menu">
+        <i class="glyphicon glyphicon-cog"></i>
+    </button>    
+    <button class="pull-left visible-xs" data-ng-toggle-class="show" data-toggle-ani="true" data-auto-hide="true" data-target=".bottom-left-menu">
+        <i class="glyphicon glyphicon-align-justify"></i>
+    </button>
+
+</div>
+
+
+<div class="collapse navbar-collapse bottom-left-menu">
+    <!-- nabar right -->
+    <ul class="nav navbar-nav navbar-left"style="margin-left: 1.7rem;">
+       
+        <li  data-ng-class="{'active':  navItem.view == navModel.currentItem.view}" data-ng-click="nav(navItem, null, true)" data-ng-repeat="navItem in navModel.navItems | filter:{hide:false} track by $index">
+            <span class="hidden-xs topEffect" data-ng-show="navModel.currentItem && navModel.currentItem.showActivebar">
+                <span class="fa fa-caret-down"></span>
+            </span>
+            <a data-ng-ripples  href="javascript:void(0)">
+                <span data-ng-bind="navItem.name"></span>
+                
+                <span data-ng-if="navItem.view=='root.main.wndmgr' && navModel.pageCount>0" class="badge badge-sm up bg-red pull-right-xs" data-ng-bind="navModel.pageCount"></span>
+            </a>
+            
+            <span class="hidden-xs actionEffect">
+                <span class="fa fa-caret-up"></span>
+            </span>
+        </li>
+
+        <li >
+            <a data-ng-ripples  target="_blank" href="http://h5.sobeycloud.com/index.php?c=user&a=login&username=h5@sobey.com&password=newmedia">
+                <span >场景编辑工具</span>                
+            </a>            
+            <span class="hidden-xs actionEffect">
+                <span class="fa fa-caret-up"></span>
+            </span>
+        </li>
+        <li >
+            <a data-ng-ripples  target="_blank" href="http://113.142.48.70/imageEdit/index.html">
+                <span >图片编辑工具</span>                
+            </a>            
+            <span class="hidden-xs actionEffect">
+                <span class="fa fa-caret-up"></span>
+            </span>
+        </li>
+        <li >
+            <a data-ng-ripples  target="_blank" href="http://wx.sobeycloud.com/wxfg/publish/#/om/docs/doc">
+                <span >微信发稿工具</span>                
+            </a>            
+            <span class="hidden-xs actionEffect">
+                <span class="fa fa-caret-up"></span>
+            </span>
+        </li>
+         <li >
+            <a data-ng-ripples  target="_blank" href="{{getUrl('/VMS/Index')}}">
+                <span >视频发布管理</span>                
+            </a>            
+            <span class="hidden-xs actionEffect">
+                <span class="fa fa-caret-up"></span>
+            </span>
+        </li>
+        <li >
+            <a data-ng-ripples  target="_blank" href="{{getUrl('/VMS/Publish')}}">
+                <span >内容发布管理</span>                
+            </a>            
+            <span class="hidden-xs actionEffect">
+                <span class="fa fa-caret-up"></span>
+            </span>
+        </li>
+        
+    </ul>
+
+    <!--<ul class="nav navbar-nav navbar-right index-outlink">
+        <li>
+            <a class="index-outlink-a" title="索贝轻应用" href="http://h5.sobeycloud.com/index.php?c=user&a=login&username=luodong&password=123456" target="_blank">
+                索贝轻应用
+            </a>
+        </li>
+        <li>
+            <a class="index-outlink-a" title="微信发稿系统" href="http://wx.sobeycloud.com/wxfg/publish/#/om/docs/doc" target="_blank">
+                微信发稿系统
+            </a>
+        </li>
+        <li>
+            <a class="index-outlink-a" title="发布管理" href="{{getUrl('/VMS/Index')}}" target="_blank">
+              发布管理
+            </a>
+        </li>
+        <li>
+            <a class="index-outlink-a" title="发布单" href="{{getUrl('/VMS/Publish')}}" target="_blank">
+                    发布单
+            </a>
+        </li>
+    </ul>-->
+</div>

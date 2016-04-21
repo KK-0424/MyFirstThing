@@ -1,0 +1,312 @@
+.login {
+  position: relative;
+  /*iphone 5*/
+}
+.login .topbar {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 4rem;
+  line-height: 4rem;
+}
+.login .topbar .logoWrapper {
+  width: 6.5rem;
+  height: 4rem;
+  float: left;
+  position: relative;
+  left: 3rem;
+}
+.login .topbar .logoWrapper img {
+  width: 100%;
+  opacity: 0.7;
+}
+.login .topbar .navRight {
+  float: right;
+  margin-right: 15px;
+}
+.login .topbar .navRight .btn.active {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: rgba(255, 255, 255, 0.5);
+}
+.login .content {
+  position: absolute;
+  top: 4rem;
+  bottom: 4rem;
+  width: 100%;
+}
+.login .content .formPanel {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.login .content .formPanel .formWrapper {
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+}
+.login .content .formPanel .formWrapper .formContent {
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.login .content .formPanel .formWrapper .title {
+  height: 4rem;
+  line-height: 4rem;
+  position: relative;
+}
+.login .content .formPanel .formWrapper .title .logo {
+  width: 3.5rem;
+  position: absolute;
+  top: 0.3rem;
+  left: 0.5rem;
+}
+.login .content .formPanel .formWrapper .title > span {
+  font-size: 2rem;
+  padding-left: 4.5rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+.login .content .formPanel .formWrapper .panel {
+  margin-top: 2rem;
+  border-radius: 0.5rem;
+}
+.login .content .formPanel .formWrapper .panel .firstInput {
+  padding-top: 0.4rem;
+}
+.login .content .formPanel .formWrapper .panel .form-group {
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+  padding: 0rem;
+}
+.login .content .formPanel .formWrapper .panel .form-group .help-block {
+  display: inherit;
+  top: 0.2rem;
+  left: 3.5rem;
+  font-size: 0.8rem;
+}
+.login .content .formPanel .formWrapper .panel .form-group .input-group {
+  height: 100%;
+}
+.login .content .formPanel .formWrapper .panel .form-group .form-control {
+  margin-bottom: 0px;
+}
+.login .content .formPanel .formWrapper .panel .form-group.has-error span.input-group-addon {
+  color: red;
+}
+.login .content .formPanel .formWrapper .panel span.input-group-addon {
+  border-radius: 0px;
+  border: none;
+  font-size: 1.3rem;
+  background-color: transparent;
+  color: #aaaaaa;
+}
+.login .content .formPanel .formWrapper .panel span.input-group-addon.lastInput {
+  border: none;
+}
+.login .content .formPanel .formWrapper .panel input {
+  border: none;
+  border-radius: 0px;
+  box-shadow: none;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  height: 3.5rem;
+}
+.login .content .formPanel .formWrapper .panel input .placeholder {
+  font-size: 1rem;
+  vertical-align: middle;
+  padding: 0.5rem;
+}
+.login .content .formPanel .formWrapper .panel input::-webkit-input-placeholder {
+  font-size: 1rem;
+  vertical-align: middle;
+  padding: 0.5rem;
+}
+.login .content .formPanel .formWrapper .panel input::-moz-placeholder {
+  font-size: 1rem;
+  vertical-align: middle;
+  padding: 0.5rem;
+}
+.login .content .formPanel .formWrapper .panel input:-ms-input-placeholder {
+  font-size: 1rem;
+  vertical-align: middle;
+  padding: 0.5rem;
+}
+.login .content .formPanel .formWrapper .panel input:-moz-placeholder {
+  font-size: 1rem;
+  vertical-align: middle;
+  padding: 0.5rem;
+}
+.login .content .formPanel .formWrapper .panel input:-webkit-autofill {
+  background-color: transparent;
+}
+.login .content .formPanel .formWrapper .panel .lastInput .input-group {
+  padding-bottom: 0.4rem;
+  border: none;
+}
+.login .content .formPanel .formWrapper .panel .lastInput .form-control,
+.login .content .formPanel .formWrapper .panel .lastInput .input-group-addon {
+  background-size: 0% 0px, 0% 0px;
+}
+.login .content .formPanel .formWrapper .panel .lastInput.is-focused .form-control,
+.login .content .formPanel .formWrapper .panel .lastInput.is-focused .input-group-addon {
+  background-size: 100% 2px, 100% 1px;
+}
+.login .content .formPanel .formWrapper .bottom .form-group {
+  margin-top: 2rem;
+}
+.login .content .formPanel .formWrapper .bottom .btn {
+  padding: 0rem;
+  font-size: 1.5rem;
+  line-height: 3.5rem;
+  height: 3.5rem;
+  border-radius: 0.5rem;
+  width: 100%;
+}
+.login .content .formPanel .formWrapper .bottom .btn[disabled][disabled] {
+  background-color: #4ea04e;
+}
+.login .content.ng-enter {
+  -webkit-animation: 1s mainEnter;
+          animation: 1s mainEnter;
+}
+.login .content.ng-enter .title {
+  -webkit-animation: 0.5s fadeInDown;
+          animation: 0.5s fadeInDown;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+.login .content.ng-enter .panel {
+  -webkit-animation: 0.5s fadeIn;
+          animation: 0.5s fadeIn;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+.login .content.ng-enter .bottom {
+  -webkit-animation: 0.5s fadeInUp;
+          animation: 0.5s fadeInUp;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+.login .content.ng-leave {
+  -webkit-animation: 0.5s;
+          animation: 0.5s;
+}
+.login .content.ng-leave .title {
+  -webkit-animation: 0.5s fadeOutUp;
+          animation: 0.5s fadeOutUp;
+}
+.login .content.ng-leave .panel {
+  -webkit-animation: 0.5s fadeOut;
+          animation: 0.5s fadeOut;
+}
+.login .content.ng-leave .bottom {
+  -webkit-animation: 0.5s fadeOutDown;
+          animation: 0.5s fadeOutDown;
+}
+.login .foot {
+  position: absolute;
+  width: 100%;
+  height: 4rem;
+  bottom: 0px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 4rem;
+  color: #4ea04e;
+  font-size: 1rem;
+}
+@media (min-width: 992px) and (min-height: 722px) {
+  .login .content .formPanel .formWrapper {
+    top: 7rem;
+  }
+  .login .content .formPanel .formWrapper .formContent {
+    width: 40rem;
+  }
+}
+@media (min-width: 992px) and (max-height: 721px) {
+  .login .content .formPanel .formWrapper {
+    top: 3rem;
+  }
+  .login .content .formPanel .formWrapper .formContent {
+    width: 40rem;
+  }
+  .login .content .formPanel.reg .formWrapper {
+    top: 1rem;
+  }
+  .login .content .formPanel.reg .formWrapper .formContent {
+    width: 40rem;
+  }
+  .login .content .formPanel.reg .formWrapper .title {
+    height: 3rem;
+    line-height: 3rem;
+  }
+  .login .content .formPanel.reg .formWrapper .title .logo {
+    width: 2.63rem;
+    top: 0.2rem;
+    left: 0.4rem;
+  }
+  .login .content .formPanel.reg .formWrapper .title > span {
+    font-size: 1.5rem;
+    padding-left: 4rem;
+  }
+  .login .content .formPanel.reg .formWrapper .panel {
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+  }
+  .login .content .formPanel.reg .formWrapper .panel .firstInput {
+    padding-top: 0.4rem;
+  }
+  .login .content .formPanel.reg .formWrapper .panel .form-group .help-block {
+    top: 0.1rem;
+    left: 3.5rem;
+    font-size: 0.7rem;
+  }
+  .login .content .formPanel.reg .formWrapper .panel span.input-group-addon {
+    font-size: 1.3rem;
+    background-position: bottom;
+  }
+  .login .content .formPanel.reg .formWrapper .panel input {
+    font-size: 1.3rem;
+    padding: 0.5rem;
+    height: 3.0rem;
+  }
+  .login .content .formPanel.reg .formWrapper .panel input .placeholder {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+  .login .content .formPanel.reg .formWrapper .panel .lastInput .input-group {
+    padding-bottom: 0.4rem;
+  }
+  .login .content .formPanel.reg .formWrapper .bottom .form-group {
+    margin-top: 1rem;
+  }
+  .login .content .formPanel.reg .formWrapper .bottom .btn {
+    font-size: 1.3rem;
+    line-height: 3rem;
+    height: 3rem;
+    border-radius: 0.5rem;
+    margin: 0rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .login .content .formPanel .formWrapper {
+    top: 5rem;
+  }
+  .login .content .formPanel .formWrapper .formContent {
+    width: 30rem;
+  }
+}
+@media (max-width: 767px) and (min-width: 322px) {
+  .login .content .formPanel .formWrapper {
+    top: 3rem;
+  }
+  .login .content .formPanel .formWrapper .formContent {
+    width: 30rem;
+  }
+}
+@media (max-width: 321px) {
+  .login .content .formPanel .formWrapper {
+    top: 3rem;
+  }
+  .login .content .formPanel .formWrapper .formContent {
+    width: 25rem;
+  }
+}

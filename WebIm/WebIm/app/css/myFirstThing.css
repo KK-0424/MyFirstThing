@@ -1,0 +1,93 @@
+﻿.loginForm {
+    box-shadow:1px 1px 1px #ccc;
+    position: absolute;
+    width: 600px;
+    margin-left: -300px;
+    height: 430px;
+    left: 50%;
+    margin-top: -215px;
+    top: 50%;
+    padding: 60px;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+.regForm
+{
+	box-shadow:1px 1px 1px #ccc;
+    position: absolute;
+    width: 600px;
+    margin-left: -300px;
+    height: 600px;
+    left: 50%;
+    margin-top: -300px;
+    top: 50%;
+    padding: 60px;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+.loginTitle {
+    font-size: 30px;
+    color: #ccc;
+    left: 10px;
+    font-weight: 700;
+}
+
+.loginUserName {
+    padding-top: 45px;
+    font-size: 20px;
+    color: #ccc;
+    width: 460px;
+    text-align: center;
+}
+
+.userName {
+    padding-left:5px;
+    width: 350px;
+    border: 1px solid #ccc;
+    height: 35px;
+    border-radius: 5px;
+}
+
+.loginIcon {
+    right: 15px;
+    left: 25px;
+}
+
+.loginDiv {
+    width: 100%;
+}
+
+.loginPassword {
+    padding-top: 30px;
+    font-size: 20px;
+    color: #ccc;
+    width: 460px;
+    text-align: center;
+}
+
+.loginBtn {
+    width: 130px;
+    height: 35px;
+    top: 30px;
+    position: relative;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%,from(#70A0FF), to(#6191F2));
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    color: #fff;
+    font-size: 16px;
+}
+.loginBtn:hover {
+        background: -webkit-gradient(linear, 0% 0%, 0% 100%,from(#5989FF), to(#5080F2));
+    }
+.loginBtn:active {
+        background: -webkit-gradient(linear, 0% 0%, 0% 100%,from(#4878FF), to(#3969F2));
+    }
+.loginA{
+    display: block;
+    position: relative;
+    top: 70px;
+    cursor:default;
+}html {
+    background-image:url(../images/1.jpg);
+}

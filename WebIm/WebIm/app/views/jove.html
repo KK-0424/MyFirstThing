@@ -1,0 +1,51 @@
+﻿<script type="text/ng-template" id="msg.html">
+    <section data-ng-class="msg.classname">
+        <div> {{msg.content}}</div>
+            <span >{{msg.username}}</span>
+    </section>
+</script>
+<div class="chatPlugin">
+<div class="chatbox" >
+    <div class="chatContent">
+        <div class="chatTitle">
+            <span style="text-align:left;margin-left:10px;">Websocket多人聊天室</span>
+        </div>
+       <div class="chatBlock">
+                     <div  data-ng-scrollbar data-scrollbar-x="false" data-scrollbar-y="true" data-scrollbar-config="{show:false, autoResize: true, dragSpeed: 1.2}" id="clipListPanel" class="listPanel" style="overflow: hidden; width: 100%; border-right: none; margin-bottom: 30px;">
+                            <div class="listview">
+                               <div  data-ng-repeat="msg in msgList" data-ng-include="'msg.html'" ></div>
+                            </div>
+                        </div>
+           </div>
+    </div>
+    <div class="input-box">
+    <textarea class="msgArea"  data-ng-model="content" data-ng-keyup="Keyup($event)"  placeholder="请输入聊天内容，按Ctrl提交"></textarea>
+  <div class="sendBlock">
+        <button class="button" data-ng-click="submit()">提交</button>
+        <a class="tips">Tips:私聊需要在消息后面加上‘@’+‘用户名’，如输入“你好啊!@张三”</a>
+
+  </div>
+    </div>
+</div>
+<div class="otherInfo">
+    <div class="sysMsg">    
+            <div class="title">系统消息</div>
+         <div class="chatBlock">
+         <div  data-ng-scrollbar data-scrollbar-x="false" data-scrollbar-y="true" data-scrollbar-config="{show:false, autoResize: true, dragSpeed: 1.2}" id="Div1" class="listPanel" style="overflow: hidden; width: 100%; margin-bottom: 30px;">            
+        <div class="list" data-ng-repeat="systemMsg in systemMsgList track by $index">{{systemMsg}}</div>
+             </div>
+              </div>
+    </div>
+    <div class="userList">
+        <div class="title">在线列表</div>
+           <div class="chatBlock">
+         <div  data-ng-scrollbar data-scrollbar-x="false" data-scrollbar-y="true" data-scrollbar-config="{show:false, autoResize: true, dragSpeed: 1.2}" id="Div2" class="listPanel" style="overflow: hidden; width: 100%; margin-bottom: 30px;">            
+            <a  class="list" data-ng-repeat="user in userList track by $index" style="display:block;">{{user}}</a>
+               </div>
+              </div>
+</div>
+    </div>
+</div>
+<div class="iframe">
+<iframe style="width: 100%; height: 50%;" src="http://engine.zuoyouxi.com/game/Koala/index.php"/>
+    </div>

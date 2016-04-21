@@ -1,0 +1,37 @@
+﻿<div class="regForm">
+    <span class="loginTitle icon-cloud">&nbsp;&nbsp;Register</span>
+    <form name="regForm"  novalidate>
+        <div class="loginUserName">
+            <span class="loginIcon glyphicon glyphicon-user">
+                <input class="userName" placeholder="Please input your username" data-ng-model="regModel.userName" data-uib-popover="请输入您的邮箱或手机号，登录时使用此项登录" data-popover-trigger="mouseenter" />
+            </span>
+        </div>
+        <div class="loginPassword">
+            <span class="loginIcon glyphicon glyphicon-lock">
+                <input class="userName" placeholder="Please input your password" data-ng-model="regModel.password" data-uib-popover="请输入您需要设置的密码，两次密码必须保持一致"
+                    data-popover-trigger="mouseenter" />
+            </span>
+        </div>
+        <div class="loginPassword">
+            <span class="loginIcon glyphicon glyphicon-lock">
+                <input class="userName" placeholder="Please confirm your password" data-ng-model="regModel.confirmPassword" data-uib-popover="请输入您需要设置的密码，两次密码必须保持一致"
+                    data-popover-trigger="mouseenter" />
+            </span>
+        </div>
+        <div class="loginPassword">
+            <span class="loginIcon glyphicon glyphicon-star">
+                <input class="userName" placeholder="Please input your nickName" data-ng-model="regModel.nickName" data-uib-popover="请输入您的昵称"
+                    data-popover-trigger="mouseenter" />
+            </span>
+        </div>
+        <div class="loginPassword">
+            <span class="loginIcon glyphicon glyphicon-envelope">
+                <input class="userName" placeholder="Please input your email" data-ng-model="regModel.email" data-uib-popover="请输入您的email"
+                    data-popover-trigger="mouseenter" />
+            </span>
+        </div>
+        <div class="loginPassword">
+            <input data-ng-model="flag" type="checkbox" />&nbsp;&nbsp;阅读并接受<a href="/#/reg">用户许可协议</a></div>
+        <button class="loginBtn" data-ng-disable="flag" data-ng-click="regist()">Regist</button>
+    </form>
+</div>
